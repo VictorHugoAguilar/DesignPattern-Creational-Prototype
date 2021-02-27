@@ -13,6 +13,7 @@ package prototype.impl;
  * @param <T>
  */
 
+@SuppressWarnings("rawtypes")
 public interface IPrototype<T extends IPrototype> extends Cloneable {
 
 	public T clonar();

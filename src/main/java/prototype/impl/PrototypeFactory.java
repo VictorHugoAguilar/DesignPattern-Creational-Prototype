@@ -9,6 +9,7 @@ import java.util.HashMap;
  * @author Victor Hugo Aguilar Aguilar
  *
  */
+@SuppressWarnings("rawtypes")
 public class PrototypeFactory {
 
 	private static HashMap<String, IPrototype> prototypes = new HashMap<>();
