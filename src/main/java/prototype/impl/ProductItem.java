@@ -1,0 +1,58 @@
+package prototype.impl;
+
+/**
+ * Esta clase representa a los productos de la lista de precios la lista de
+ * precios puede tener uno o muchos ProductItem asociados, la clase hereda de
+ * IPrototype con el fin de poder realizar clonación de los ítems cuando
+ * realicemos una clonación en profundidad de una lista de precios, el método
+ * clonar de los ProductItem será llamado.
+ * 
+ * @author Victor Hugo Aguilar Aguilar
+ *
+ */
+public class ProductItem implements IPrototype<ProductItem> {
+
+	private String name;
+	private double price;
+
+	public ProductItem() {
+	}
+
+	public ProductItem(String name, double price) {
+		this();
+		this.name = name;
+		this.price = price;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
+
+	@Override
+	public String toString() {
+		return "ProductItem [name=" + name + ", price=" + price + "]";
+	}
+
+	@Override
+	public ProductItem clonar() {
+		return new ProductItem(this.name, this.price);
+	}
+
+	@Override
+	public ProductItem deepClone() {
+		return clonar();
+	}
+
+}
